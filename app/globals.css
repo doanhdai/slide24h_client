@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+body {
+  color: var(--foreground);
+  background: #ffffff;
+  font-family: var(--font-montserrat), 'Montserrat', sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
