@@ -155,7 +155,7 @@ export default function GioHangPage() {
 
             {/* Right Section - Order Summary */}
             <div className="lg:w-1/3 flex">
-              <div className="bg-gradient-to-r from-orange-400 to-orange-500 rounded-2xl shadow-lg p-6 md:p-8 text-white w-full flex flex-col">
+              <div className=" bg-orange-400 rounded-2xl shadow-lg p-6 md:p-8 text-white w-full flex flex-col">
                 {/* Title */}
                 <h2 className="text-2xl md:text-3xl font-bold mb-6">
                   Tổng cộng giỏ hàng
@@ -163,20 +163,17 @@ export default function GioHangPage() {
 
                 {/* Discount Code */}
                 <div className="mb-6">
-                  <label className="block text-sm font-medium mb-2">
-                    Mã giảm giá
-                  </label>
-                  <div className="flex gap-2">
+                  <div className="relative">
                     <input
                       type="text"
                       value={discountCode}
                       onChange={(e) => setDiscountCode(e.target.value)}
-                      placeholder="Nhập mã giảm giá"
-                      className="flex-1 px-4 py-2 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white"
+                      placeholder="Mã giảm giá"
+                      className="w-full px-4 py-2.5 pr-24 bg-white rounded-full text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/50"
                     />
                     <button
                       onClick={handleApplyDiscount}
-                      className="px-6 py-2 bg-white text-orange-500 rounded-lg font-semibold hover:bg-gray-100 transition-colors whitespace-nowrap"
+                      className="absolute right-2 top-1/2 -translate-y-1/2 px-4 py-1.5 bg-gradient-to-r from-orange-400 to-orange-500 text-white rounded-full font-semibold hover:opacity-90 transition-opacity whitespace-nowrap"
                     >
                       Áp dụng
                     </button>
@@ -200,9 +197,12 @@ export default function GioHangPage() {
                 </div>
 
                 {/* Checkout Button */}
-                <button className="w-full bg-white text-orange-500 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors mt-auto">
+                <Link
+                  href="/thanh-toan"
+                  className="w-full bg-white text-black py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-colors mt-auto flex items-center justify-center"
+                >
                   Tiến hành thanh toán
-                </button>
+                </Link>
               </div>
             </div>
           </div>
