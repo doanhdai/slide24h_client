@@ -18,16 +18,16 @@ const CARDS_PER_PAGE = 12;
 
 // Map category slug to data
 const categoryDataMap: { [key: string]: Slide[] } = {
-  'giao-duc': giaoDucVideos,
-  'dai-cuong': daiCuongVideos,
-  'ngay-le-su-kien': ngayLeSuKienVideos,
+  'education': giaoDucVideos,
+  'general': daiCuongVideos,
+  'holidays-events': ngayLeSuKienVideos,
 };
 
 // Map category slug to title
 const categoryTitleMap: { [key: string]: string } = {
-  'giao-duc': 'Giáo Dục',
-  'dai-cuong': 'Đại Cương',
-  'ngay-le-su-kien': 'Ngày Lễ - Sự Kiện',
+  'education': 'Education',
+  'general': 'General',
+  'holidays-events': 'Holidays & Events',
 };
 
 export default function VideoCategoryPage() {
@@ -36,18 +36,18 @@ export default function VideoCategoryPage() {
   const [currentPage, setCurrentPage] = useState(0);
   const [activeFilter, setActiveFilter] = useState('VIDEO');
   const [activeSubFilter, setActiveSubFilter] = useState(
-    categoryTitleMap[category] || 'Giáo Dục'
+    categoryTitleMap[category] || 'Education'
   );
 
   const filters = ['TẤT CẢ', 'VIDEO', 'SLIDE', 'POSTER'];
-  const subFilters = ['Giáo Dục', 'Đại Cương', 'Ngày Lễ - Sự Kiện'];
+  const subFilters = ['Education', 'General', 'Holidays & Events'];
 
   // Get slides for this category
   const allSlides = useMemo(() => {
     return categoryDataMap[category] || giaoDucVideos;
   }, [category]);
 
-  const categoryTitle = categoryTitleMap[category] || 'Giáo Dục';
+  const categoryTitle = categoryTitleMap[category] || 'Education';
 
   // Calculate pagination
   const totalPages = Math.ceil(allSlides.length / CARDS_PER_PAGE);

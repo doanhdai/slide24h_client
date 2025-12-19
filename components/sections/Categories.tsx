@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { ROUTES } from '@/constants/routes';
 
 interface CategoryCardProps {
   title: string;
@@ -15,7 +16,7 @@ function CategoryCard({ title, count, href, gradient, iconUrl, iconPosition = 'r
   return (
     <Link
       href={href}
-      className="relative h-[73px] w-[198px] rounded-[9px] overflow-hidden shadow-[0px_0px_4px_0px_rgba(0,0,0,0.25)] hover:shadow-[0px_3px_4px_0px_rgba(0,0,0,0.25)] transition-all duration-300 group"
+      className="relative h-[73px] flex-1 min-w-[180px] max-w-[220px] rounded-[9px] overflow-hidden shadow-[0px_0px_4px_0px_rgba(0,0,0,0.25)] hover:shadow-[0px_3px_4px_0px_rgba(0,0,0,0.25)] transition-all duration-300 group"
     >
       {/* Background - SVG hoặc Gradient */}
       {bgImageUrl ? (
@@ -80,46 +81,43 @@ export default function Categories() {
     { 
       title: 'Kho mẫu slide', 
       count: '+ 2000 mẫu',
-      href: '/mau-slide',
+      href: ROUTES.SLIDE_TEMPLATES,
       gradient: 'blue',
       iconUrl: '/icon/icon_templete_slide.svg',
       bgImageUrl: '/images/bg_templete_icon.svg'
     },
     { 
-      title: 'Kho nội dung slide', 
-      count: '+ 1569 mẫu',
-      href: '/kho-noi-dung',
-      gradient: 'yellow',
-      iconUrl: '/icon/icon_content_slide.svg',
-      bgImageUrl: '/images/bg_content_slide.svg'
-    },
-    { 
       title: 'Thiết kế Poster', 
       count: '+ 1569 mẫu',
-      href: '/thiet-ke-poster/xem-them',
+      href: ROUTES.POSTER_DESIGN_MORE,
       gradient: 'pink',
-      iconUrl: '/icon/icon_design_poster.svg'
+      iconUrl: '/icon/icon_design_poster.svg',
+      bgImageUrl: '/images/bg_design_poster.png'
+
     },
     { 
       title: 'Kho Slide Miễn Phí', 
       count: '+ 398 mẫu',
-      href: '/kho-slide-mien-phi',
+      href: ROUTES.FREE_SLIDES,
       gradient: 'purple',
-      iconUrl: '/icon/icon_all_slide_free.svg'
+      iconUrl: '/icon/icon_all_slide_free.svg',
+      bgImageUrl: '/images/bg_all_slide_free.png'
     },
     { 
       title: 'Hoạt Hình', 
       count: '+ 537 mẫu',
-      href: '/hoat-hinh',
+      href: ROUTES.ANIMATIONS,
       gradient: 'orange',
-      iconUrl: '/icon/icon_all_slide_free.svg' // Placeholder - cần icon riêng
+      iconUrl: '/icon/icon_all_slide_free.svg', // Placeholder - cần icon riêng
+      bgImageUrl: '/images/bg_slide_cartoon.png'
     },
     { 
       title: 'Tài khoản AI', 
       count: '+ 10 dịch vụ',
-      href: '/tai-khoan-ai',
+      href: ROUTES.AI_ACCOUNTS,
       gradient: 'green',
-      iconUrl: '/icon/icon_all_slide_free.svg' // Placeholder - cần icon riêng
+      iconUrl: '/icon/icon_all_slide_free.svg', // Placeholder - cần icon riêng
+      bgImageUrl: '/images/bg_account_ai.svg'
     },
   ];
 

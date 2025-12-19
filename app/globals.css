@@ -16,3 +16,16 @@ body {
     text-wrap: balance;
   }
 }
+
+@keyframes marquee {
+  0% {
+    transform: translateX(-16.666%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 10s linear infinite;
+}

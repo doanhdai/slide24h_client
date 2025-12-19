@@ -74,7 +74,7 @@ export default function Hero() {
       </div>
 
       {/* Navigation Arrows - Left Side */}
-      <div className="absolute left-8 top-1/2 -translate-y-1/2 flex flex-col gap-4">
+      {/* <div className="absolute left-8 top-1/2 -translate-y-1/2 flex flex-col gap-4">
         <button
           className="w-10 h-10 bg-black/21 rounded-full flex items-center justify-center hover:bg-black/30 transition-colors backdrop-blur-sm"
           aria-label="Previous"
@@ -111,7 +111,7 @@ export default function Hero() {
             />
           </svg>
         </button>
-      </div>
+      </div> */}
 
       {/* Scroll Indicator - Right Side */}
       <div className="absolute right-8 top-1/2 -translate-y-1/2 flex flex-col items-center gap-2">

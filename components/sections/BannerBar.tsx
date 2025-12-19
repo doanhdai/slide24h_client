@@ -1,15 +1,44 @@
 export default function BannerBar() {
+  const content = (
+    <>
+      <div className="flex items-center shrink-0">
+        <span className="w-1.5 h-1.5 bg-white rounded-full shrink-0"></span>
+        <span className="whitespace-nowrap ml-1">Slide24h.com</span>
+      </div>
+      <div className="flex items-center shrink-0">
+        <span className="w-1.5 h-1.5 bg-white rounded-full shrink-0"></span>
+        <span className="whitespace-nowrap ml-1">Nhanh - Đẹp - Giá HSSV</span>
+      </div>
+      <div className="flex items-center shrink-0">
+        <span className="w-1.5 h-1.5 bg-white rounded-full shrink-0"></span>
+        <span className="whitespace-nowrap ml-1">Xưởng sản xuất slide</span>
+      </div>
+    </>
+  );
+
   return (
-    <div className="w-full min-h-[88px] bg-gradient-to-r from-[#ff3d8c] to-[#ff975e] flex items-center justify-center py-4">
-      <div className="max-w-7xl mx-auto px-4 w-full">
-        <div className="flex items-center justify-center gap-2 md:gap-3 text-white font-semibold text-sm md:text-base lg:text-lg flex-wrap">
-          <span className="whitespace-nowrap">Slide24h.com</span>
-          <span className="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0"></span>
-          <span className="whitespace-nowrap">Nhanh - Đẹp - Giá HSSV</span>
-          <span className="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0"></span>
-          <span className="whitespace-nowrap">Xưởng sản xuất slide</span>
-          <span className="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0"></span>
-          <span className="whitespace-nowrap">Slide24h.com</span>
+    <div className="w-full min-h-[88px] bg-gradient-to-l from-pink-500 to-orange-400 flex items-center justify-center py-4 overflow-hidden">
+      <div className="w-full relative">
+        <div className="flex items-center gap-8 md:gap-12 text-white font-semibold text-base md:text-lg lg:text-xl animate-marquee whitespace-nowrap">
+          {/* Duplicate content nhiều lần để đảm bảo seamless loop */}
+          <div className="flex items-center gap-8 md:gap-12 shrink-0">
+            {content}
+          </div>
+          <div className="flex items-center gap-8 md:gap-12 shrink-0">
+            {content}
+          </div>
+          <div className="flex items-center gap-8 md:gap-12 shrink-0">
+            {content}
+          </div>
+          <div className="flex items-center gap-8 md:gap-12 shrink-0">
+            {content}
+          </div>
+          <div className="flex items-center gap-8 md:gap-12 shrink-0">
+            {content}
+          </div>
+          <div className="flex items-center gap-8 md:gap-12 shrink-0">
+            {content}
+          </div>
         </div>
       </div>
     </div>

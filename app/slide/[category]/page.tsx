@@ -18,16 +18,16 @@ const CARDS_PER_PAGE = 12;
 
 // Map category slug to data
 const categoryDataMap: { [key: string]: Slide[] } = {
-  'gioi-thieu-thanh-vien': gioiThieuThanhVienSlides,
-  'bao-luc-hoc-duong': baoLucHocDuongSlides,
-  'bao-luc-gia-dinh': baoLucGiaDinhSlides,
+  'introduce-members': gioiThieuThanhVienSlides,
+  'school-violence': baoLucHocDuongSlides,
+  'domestic-violence': baoLucGiaDinhSlides,
 };
 
 // Map category slug to title
 const categoryTitleMap: { [key: string]: string } = {
-  'gioi-thieu-thanh-vien': 'Giới Thiệu Thành Viên',
-  'bao-luc-hoc-duong': 'Bạo Lực Học Đường',
-  'bao-luc-gia-dinh': 'Bạo Lực Gia Đình',
+  'introduce-members': 'Introduce Members',
+  'school-violence': 'School Violence',
+  'domestic-violence': 'Domestic Violence',
 };
 
 export default function SlideCategoryPage() {
@@ -36,18 +36,18 @@ export default function SlideCategoryPage() {
   const [currentPage, setCurrentPage] = useState(0);
   const [activeFilter, setActiveFilter] = useState('SLIDE');
   const [activeSubFilter, setActiveSubFilter] = useState(
-    categoryTitleMap[category] || 'Giới Thiệu Thành Viên'
+    categoryTitleMap[category] || 'Introduce Members'
   );
 
   const filters = ['TẤT CẢ', 'VIDEO', 'SLIDE', 'POSTER'];
-  const subFilters = ['Giới Thiệu Thành Viên', 'Bạo Lực Học Đường', 'Bạo Lực Gia Đình'];
+  const subFilters = ['Introduce Members', 'School Violence', 'Domestic Violence'];
 
   // Get slides for this category
   const allSlides = useMemo(() => {
     return categoryDataMap[category] || gioiThieuThanhVienSlides;
   }, [category]);
 
-  const categoryTitle = categoryTitleMap[category] || 'Giới Thiệu Thành Viên';
+  const categoryTitle = categoryTitleMap[category] || 'Introduce Members';
 
   // Calculate pagination
   const totalPages = Math.ceil(allSlides.length / CARDS_PER_PAGE);
