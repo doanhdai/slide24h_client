@@ -25,7 +25,7 @@ export default function IntroOutroPage() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const [activeFilter, setActiveFilter] = useState('TẤT CẢ');
-  const [activeSubFilter, setActiveSubFilter] = useState('Giáo Dục');
+  const [activeSubFilter, setActiveSubFilter] = useState('Education');
   const [currentPage, setCurrentPage] = useState(0);
   const filters = ['TẤT CẢ', 'VIDEO', 'SLIDE', 'POSTER'];
 
@@ -39,25 +39,25 @@ export default function IntroOutroPage() {
       
       // Set default sub-filter based on filter type
       if (filterParam === 'VIDEO') {
-        setActiveSubFilter('Giáo Dục');
+        setActiveSubFilter('Education');
       } else if (filterParam === 'SLIDE') {
-        setActiveSubFilter('Giới Thiệu Thành Viên');
+        setActiveSubFilter('Introduce Members');
       }
     }
     
     if (sectionParam) {
       // Convert section param to filter name for VIDEO
       const videoSectionToFilter: { [key: string]: string } = {
-        'giao-duc': 'Giáo Dục',
-        'dai-cuong': 'Đại Cương',
-        'ngay-le-su-kien': 'Ngày Lễ - Sự Kiện',
+        'education': 'Education',
+        'general': 'General',
+        'holidays-events': 'Holidays & Events',
       };
       
       // Convert section param to filter name for SLIDE
       const slideSectionToFilter: { [key: string]: string } = {
-        'gioi-thieu-thanh-vien': 'Giới Thiệu Thành Viên',
-        'bao-luc-hoc-duong': 'Bạo Lực Học Đường',
-        'bao-luc-gia-dinh': 'Bạo Lực Gia Đình',
+        'introduce-members': 'Introduce Members',
+        'school-violence': 'School Violence',
+        'domestic-violence': 'Domestic Violence',
       };
       
       const filterName = videoSectionToFilter[sectionParam] || slideSectionToFilter[sectionParam];
@@ -84,11 +84,11 @@ export default function IntroOutroPage() {
   // Get videos by category
   const getVideosByCategory = (category: string): Slide[] => {
     switch (category) {
-      case 'Giáo Dục':
+      case 'Education':
         return giaoDucVideos;
-      case 'Đại Cương':
+      case 'General':
         return daiCuongVideos;
-      case 'Ngày Lễ - Sự Kiện':
+      case 'Holidays & Events':
         return ngayLeSuKienVideos;
       default:
         return giaoDucVideos;
@@ -107,9 +107,9 @@ export default function IntroOutroPage() {
     setCurrentPage(0);
     // Reset sub-filter based on filter type
     if (filter === 'VIDEO') {
-      setActiveSubFilter('Giáo Dục');
+      setActiveSubFilter('Education');
     } else if (filter === 'SLIDE') {
-      setActiveSubFilter('Giới Thiệu Thành Viên');
+      setActiveSubFilter('Introduce Members');
     }
     
     // Update URL without section param when changing main filter
@@ -151,11 +151,11 @@ export default function IntroOutroPage() {
   // Get slides by category for SLIDE filter
   const getSlidesByCategory = (category: string): Slide[] => {
     switch (category) {
-      case 'Giới Thiệu Thành Viên':
+      case 'Introduce Members':
         return gioiThieuThanhVienSlides;
-      case 'Bạo Lực Học Đường':
+      case 'School Violence':
         return baoLucHocDuongSlides;
-      case 'Bạo Lực Gia Đình':
+      case 'Domestic Violence':
         return baoLucGiaDinhSlides;
       default:
         return gioiThieuThanhVienSlides;
@@ -165,9 +165,9 @@ export default function IntroOutroPage() {
   // Get sub-filters based on active filter
   const getSubFilters = (): string[] => {
     if (activeFilter === 'VIDEO') {
-      return ['Giáo Dục', 'Đại Cương', 'Ngày Lễ - Sự Kiện'];
+      return ['Education', 'General', 'Holidays & Events'];
     } else if (activeFilter === 'SLIDE') {
-      return ['Giới Thiệu Thành Viên', 'Bạo Lực Học Đường', 'Bạo Lực Gia Đình'];
+      return ['Introduce Members', 'School Violence', 'Domestic Violence'];
     }
     return [];
   };
@@ -235,44 +235,44 @@ export default function IntroOutroPage() {
             /* Video Layout with Categories */
             <>
               <CategorySection
-                title="Giáo Dục"
+                title="Education"
                 slides={giaoDucVideos}
-                viewMoreHref="/video/giao-duc"
-                sectionId={getSectionId('Giáo Dục')}
+                viewMoreHref="/video/education"
+                sectionId={getSectionId('Education')}
               />
               <CategorySection
-                title="Đại Cương"
+                title="General"
                 slides={daiCuongVideos}
-                viewMoreHref="/video/dai-cuong"
-                sectionId={getSectionId('Đại Cương')}
+                viewMoreHref="/video/general"
+                sectionId={getSectionId('General')}
               />
               <CategorySection
-                title="Ngày Lễ - Sự Kiện"
+                title="Holidays & Events"
                 slides={ngayLeSuKienVideos}
-                viewMoreHref="/video/ngay-le-su-kien"
-                sectionId={getSectionId('Ngày Lễ - Sự Kiện')}
+                viewMoreHref="/video/holidays-events"
+                sectionId={getSectionId('Holidays & Events')}
               />
             </>
           ) : (
             /* Slide Layout with Categories */
             <>
               <CategorySection
-                title="Giới Thiệu Thành Viên"
+                title="Introduce Members"
                 slides={gioiThieuThanhVienSlides}
-                viewMoreHref="/slide/gioi-thieu-thanh-vien"
-                sectionId={getSectionId('Giới Thiệu Thành Viên')}
+                viewMoreHref="/slide/introduce-members"
+                sectionId={getSectionId('Introduce Members')}
               />
               <CategorySection
-                title="Bạo Lực Học Đường"
+                title="School Violence"
                 slides={baoLucHocDuongSlides}
-                viewMoreHref="/slide/bao-luc-hoc-duong"
-                sectionId={getSectionId('Bạo Lực Học Đường')}
+                viewMoreHref="/slide/school-violence"
+                sectionId={getSectionId('School Violence')}
               />
               <CategorySection
-                title="Bạo Lực Gia Đình"
+                title="Domestic Violence"
                 slides={baoLucGiaDinhSlides}
-                viewMoreHref="/slide/bao-luc-gia-dinh"
-                sectionId={getSectionId('Bạo Lực Gia Đình')}
+                viewMoreHref="/slide/domestic-violence"
+                sectionId={getSectionId('Domestic Violence')}
               />
             </>
           )

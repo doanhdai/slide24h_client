@@ -32,21 +32,20 @@ export default function SlideCard({
     return new Intl.NumberFormat('vi-VN').format(num);
   };
 
-  // Convert /slide/[id], /hoat-hinh/[id], or /tai-khoan-ai/[id] to /san-pham/[id] if it's not a category
   const getProductHref = (href: string): string => {
     if (href.startsWith('/slide/')) {
       const slug = href.replace('/slide/', '');
       if (!categorySlugs.includes(slug)) {
-        return href.replace('/slide/', '/san-pham/');
+        return href.replace('/slide/', '/product/');
       }
     }
-    if (href.startsWith('/hoat-hinh/')) {
-      const slug = href.replace('/hoat-hinh/', '');
-      return `/san-pham/${slug}`;
+    if (href.startsWith('/animations/')) {
+      const slug = href.replace('/animations/', '');
+      return `/product/${slug}`;
     }
-    if (href.startsWith('/tai-khoan-ai/')) {
-      const slug = href.replace('/tai-khoan-ai/', '');
-      return `/san-pham/${slug}`;
+    if (href.startsWith('/ai-accounts/')) {
+      const slug = href.replace('/ai-accounts/', '');
+      return `/product/${slug}`;
     }
     return href;
   };

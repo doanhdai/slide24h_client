@@ -32,7 +32,7 @@ export default function PosterSectionWrapper({
       topRowPosters={topRowPosters}
       bottomRowPosters={bottomRowPosters}
       showViewMore={true}
-      viewMoreHref="/thiet-ke-poster/xem-them"
+      viewMoreHref="/poster-design/more"
     />
   );
 }

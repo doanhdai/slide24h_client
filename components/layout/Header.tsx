@@ -39,41 +39,41 @@ export default function Header() {
             )}
           </Link>
           <Link 
-            href="/kho-mau-slide" 
+            href="/slide-templates" 
             className={`font-semibold text-lg relative group transition-colors ${
-              pathname === '/kho-mau-slide' 
+              pathname === '/slide-templates'
                 ? 'text-orange-500' 
                 : 'text-black hover:text-orange-500'
             }`}
           >
             Kho mẫu slide
-            {pathname === '/kho-mau-slide' && (
+            {pathname === '/slide-templates' && (
               <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-orange-400 to-orange-500 rounded"></span>
             )}
           </Link>
           <Link 
-            href="/hoat-hinh" 
+            href="/animations" 
             className={`font-semibold text-lg relative group transition-colors ${
-              pathname === '/hoat-hinh' 
+              pathname === '/animations' || pathname === '/hoat-hinh'
                 ? 'text-orange-500' 
                 : 'text-black hover:text-orange-500'
             }`}
           >
             Hoạt Hình
-            {pathname === '/hoat-hinh' && (
+            {(pathname === '/animations' || pathname === '/hoat-hinh') && (
               <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-orange-400 to-orange-500 rounded"></span>
             )}
           </Link>
           <Link 
-            href="/tai-khoan-ai" 
+            href="/ai-accounts" 
             className={`font-semibold text-lg relative group transition-colors ${
-              pathname === '/tai-khoan-ai' 
+              pathname === '/ai-accounts' || pathname === '/tai-khoan-ai'
                 ? 'text-orange-500' 
                 : 'text-black hover:text-orange-500'
             }`}
           >
             Tài khoản AI
-            {pathname === '/tai-khoan-ai' && (
+            {(pathname === '/ai-accounts' || pathname === '/tai-khoan-ai') && (
               <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-orange-400 to-orange-500 rounded"></span>
             )}
           </Link>
@@ -108,7 +108,7 @@ export default function Header() {
         {/* Action Buttons */}
         <div className="flex items-center gap-2 md:gap-4">
           <Link
-            href="/dang-nhap"
+            href="/login"
             className="bg-gradient-to-r from-orange-400 to-orange-500 text-white px-4 py-2 md:px-6 md:py-2.5 rounded-full font-medium text-sm md:text-base hover:opacity-90 transition-opacity whitespace-nowrap"
           >
             <span className="hidden md:inline">Đăng nhập / Đăng kí</span>
@@ -116,7 +116,7 @@ export default function Header() {
           </Link>
           
           {/* Shopping Cart */}
-          <Link href="/gio-hang" className="relative">
+          <Link href="/cart" className="relative">
             <svg 
               className="w-8 h-8 text-black" 
               fill="none" 
