@@ -65,3 +65,11 @@ export interface CartItem {
   quantity: number;
 }
 
+export interface Order {
+  id: string;
+  orderNumber: string;
+  date: string;
+  status: string;
+  total: number;
+}
+

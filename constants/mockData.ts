@@ -1,4 +1,4 @@
-import { Card, Slide, Poster, AISoftware, CartItem } from '@/types';
+import { Card, Slide, Poster, AISoftware, CartItem, Order } from '@/types';
 
 // Mock data for intro/outro cards
 export const introOutroCards: Card[] = [
@@ -1918,6 +1918,24 @@ export const cartItems: CartItem[] = [
     image: '/images/slide-placeholder.png',
     price: 59000,
     quantity: 1,
+  },
+];
+
+// Mock data for orders
+export const orders: Order[] = [
+  {
+    id: 'order-1',
+    orderNumber: '#2238',
+    date: '14/11/2025',
+    status: 'Tạm giữ',
+    total: 236000,
+  },
+  {
+    id: 'order-2',
+    orderNumber: '#2223',
+    date: '12/11/2025',
+    status: 'Tạm giữ',
+    total: 168000,
   },
 ];
 
