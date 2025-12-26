@@ -5,28 +5,28 @@ export default function Footer() {
   return (
     <footer className="relative mt-20">
       {/* Orange Banner Section */}
-      <div className="flex justify-center px-4 py-12">
-        <div 
-          className="relative py-12 px-8 overflow-hidden rounded-[20px] w-full max-w-7xl mx-auto"
-          style={{
-            background: 'linear-gradient(180deg, #FFE6CD 0%, #EE6E2F 100%)',
-          }}
-        >
-          <div className="flex flex-col md:flex-row items-start justify-between gap-8">
-            {/* Logo Section - Left */}
-            <div className="flex flex-col items-start">
-              <Image
-                src="/images/logo_footer.png"
-                alt="SLIDE24h.com Logo"
-                width={120}
-                height={120}
-                className="mb-4"
-                priority
-              />
-            </div>
-
+      <div className="flex justify-center px-4 py-12 relative" style={{ minHeight: '400px' }}>
+        {/* Background Image - With Padding */}
+        <div className="absolute inset-0 w-full h-full px-4">
+          <div className="w-full h-full max-w-7xl mx-auto rounded-[20px] overflow-hidden shadow-lg">
+            <Image
+              src="/images/bg_footerr.png"
+              alt="Footer background"
+              fill
+              className="object-cover rounded-[20px]"
+              priority
+              sizes="100vw"
+            />
+          </div>
+        </div>
+        
+        {/* Content Container */}
+        <div className="relative z-10 w-full max-w-7xl mx-auto py-12 px-8">
+          {/* Content */}
+          <div className="w-full">
+            <div className="flex flex-col md:flex-row items-start justify-end gap-8">
             {/* Right Section - Social Media & Company Info */}
-            <div className="flex flex-col items-start md:items-start">
+            <div className="flex flex-col items-start md:items-end">
               {/* Social Media Icons - Top Right */}
               <div className="flex gap-4 mb-6">
                 {/* Facebook */}
@@ -88,11 +88,12 @@ export default function Footer() {
               </div>
             </div>
           </div>
+          </div>
         </div>
       </div>
 
       {/* Bottom Section - Contact & About */}
-      <div className="bg-white py-12 px-4">
+      <div className="bg-gradient-to-b from-white to-rose-100 py-12 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {/* Contact Information - Left */}
